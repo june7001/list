@@ -26,7 +26,7 @@ COOKIE_SECRET="48DE396E4F95BDB789FBCDAADE8DF"
 
 ### For the client client/list/.env.local:
 
-REACT_APP_API_URL=http://localhost:3000
+NEXT_PUBLIC_API_URL=http://localhost:3001  
 
 
 # Usage
