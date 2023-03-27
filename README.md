@@ -32,9 +32,8 @@ NEXT_PUBLIC_API_URL=http://localhost:3001
 # Usage
 
 ## 1.Start the server 
-
-cd server/src    
-node index.js
+   
+node server/src/index.js
 
 ## 2.Start the client
 
