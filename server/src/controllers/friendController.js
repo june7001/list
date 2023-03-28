@@ -1,9 +1,18 @@
 const pool = require("../config/db");
+const joi = require("joi");
 
 const friendController = {
   addFriend: async (req, res, next) => {
     try {
       const userId = req.user.id;
+
+      const schema = joi.object({
+        username: joi.string().min(3).max(30).required(),
+      });
+      const { error } = schema.validate(req.body);
+      if (error) {
+        return res.status(400).json({ error: error.details[0].message });
+      }
       const friendUsername = req.body.username;
 
       const [[friend]] = await pool.query(
@@ -35,6 +44,13 @@ const friendController = {
 
   getAllFriends: async (req, res, next) => {
     try {
+      const schema = joi.object({
+        userId: joi.number().integer().positive().required(),
+      });
+      const { error } = schema.validate(req.params);
+      if (error) {
+        return res.status(400).json({ error: error.details[0].message });
+      }
       const userId = req.user.id;
 
       const [friends] = await pool.query(
