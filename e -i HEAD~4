@@ -1,0 +1,83 @@
+[33mcommit cdb72d74acc4f968d2ff83cd16cdcf6089fc9f54[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: June Zhao <110632376+juneyunyun@users.noreply.github.com>
+Date:   Tue Mar 28 17:09:03 2023 +0200
+
+    delete get lists by id route
+
+[33mcommit 2d341a2c9dd1b9b4de0ece9f19ed168c5f4400cd[m
+Author: June Zhao <110632376+juneyunyun@users.noreply.github.com>
+Date:   Tue Mar 28 17:08:12 2023 +0200
+
+    delete get lists by id function
+
+[33mcommit 45d16a916a9d9f18b3a83ef802f2cdfd904d8b0f[m
+Author: June Zhao <110632376+juneyunyun@users.noreply.github.com>
+Date:   Tue Mar 28 17:07:11 2023 +0200
+
+    add validation to getListsByUsername
+
+[33mcommit ee12d07b5973df3f5931f6021c65648ea190ece2[m
+Author: June Zhao <110632376+juneyunyun@users.noreply.github.com>
+Date:   Tue Mar 28 16:56:11 2023 +0200
+
+    add id validation for getting and deleting items
+
+[33mcommit 2727e8ddcb28feee0787e3fa7f1829a9f9c2e294[m
+Author: June Zhao <110632376+juneyunyun@users.noreply.github.com>
+Date:   Tue Mar 28 16:51:39 2023 +0200
+
+    add addFriend and getAllFriends validations
+
+[33mcommit bc0c6f5641f12fb3059d7f1fc0adb86a56706d1e[m
+Author: June Zhao <110632376+juneyunyun@users.noreply.github.com>
+Date:   Tue Mar 28 16:29:30 2023 +0200
+
+    add login and getUserById validations
+
+[33mcommit 7a44b53c5bea0e589761b47d5086accf75adaa01[m
+Author: June Zhao <110632376+juneyunyun@users.noreply.github.com>
+Date:   Mon Mar 27 08:10:03 2023 +0200
+
+    Update README.md
+
+[33mcommit c6fd0b74a6246b69124d6e883c4eccbabbdef809[m
+Author: June Zhao <110632376+juneyunyun@users.noreply.github.com>
+Date:   Mon Mar 27 08:05:54 2023 +0200
+
+    update client .env in readme
+
+[33mcommit d3b4b5df93fee4b6017dfce0811c9d6a8469dd02[m
+Author: June Zhao <110632376+juneyunyun@users.noreply.github.com>
+Date:   Sun Mar 26 22:35:57 2023 +0200
+
+    add line breaks in readme
+
+[33mcommit 927e485882b26622392553247fc6b869b44ee6db[m
+Author: June Zhao <110632376+juneyunyun@users.noreply.github.com>
+Date:   Sun Mar 26 22:25:41 2023 +0200
+
+    Update README.md
+
+[33mcommit c60547da44fc9e4d974d4cc2e3b770f200e948ce[m
+Author: June Zhao <110632376+juneyunyun@users.noreply.github.com>
+Date:   Sun Mar 26 20:42:27 2023 +0200
+
+    finish VG requirements
+
+[33mcommit 1b1a97026d867635225fdb50abb21451ae17840b[m
+Author: June Zhao <110632376+juneyunyun@users.noreply.github.com>
+Date:   Sat Mar 18 15:38:38 2023 +0100
+
+    add item controller, route
+
+[33mcommit 1aa5774081e82f460cbe306d6ff42e8621629069[m
+Author: June Zhao <110632376+juneyunyun@users.noreply.github.com>
+Date:   Fri Mar 17 14:43:43 2023 +0100
+
+    init db config, auth middleware, auth, basic list
+
+[33mcommit 5e50109bfb744fde1a65f86762638e6d893cb974[m
+Author: June <110632376+junescloud@users.noreply.github.com>
+Date:   Sat Mar 11 13:30:43 2023 +0100
+
+    Initial commit
