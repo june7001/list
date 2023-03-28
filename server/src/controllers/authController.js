@@ -44,6 +44,15 @@ const authController = {
   login: async (req, res) => {
     try {
       const { email, password } = req.body;
+      const schema = joi.object({
+        email: joi.string().email().required(),
+        password: joi.string().min(6).max(30).required(),
+      });
+
+      const { error } = schema.validate(req.body);
+      if (error) {
+        return res.status(400).json({ error: error.details[0].message });
+      }
       const [user] = await pool.query("SELECT * FROM users WHERE email = ?", [
         email,
       ]);
@@ -84,8 +93,18 @@ const authController = {
       res.status(500).json({ message: "An error occurred during login" });
     }
   },
+
   getUserById: async (req, res) => {
     try {
+      const schema = joi.object({
+        id: joi.number().integer().min(1).required(),
+      });
+
+      const { error } = schema.validate(req.params);
+      if (error) {
+        return res.status(400).json({ error: error.details[0].message });
+      }
+
       const userId = req.params.id;
       const [user] = await pool.query("SELECT * FROM users WHERE id = ?", [
         userId,
