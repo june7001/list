@@ -11,8 +11,13 @@ const updateItemSchema = Joi.object({
   completed: Joi.boolean().required(),
 });
 
-const idSchema = Joi.object({
+const deleteItemSchema = Joi.object({
   id: Joi.number().integer(),
+});
+
+const getItemsByListIdSchema = Joi.object({
+  list_id: Joi.number().integer(),
+  selectedUser: Joi.string().min(1).max(255).required(),
 });
 
 exports.addItem = async (req, res) => {
@@ -37,7 +42,7 @@ exports.addItem = async (req, res) => {
 
 exports.deleteItem = async (req, res) => {
   try {
-    const { error } = idSchema.validate(req.params);
+    const { error } = deleteItemSchema.validate(req.params);
     if (error) {
       return res.status(400).json({ message: error.details[0].message });
     }
@@ -81,13 +86,15 @@ exports.updateItem = async (req, res) => {
 
 exports.getItemsByListId = async (req, res) => {
   try {
-    const { error } = idSchema.validate(req.params);
+    const { error } = getItemsByListIdSchema.validate(req.params);
     if (error) {
       return res.status(400).json({ message: error.details[0].message });
     }
     const listId = req.params.list_id;
+    const selectedUser = req.params.selectedUser;
     const [items] = await pool.query("SELECT * FROM items WHERE list_id = ?", [
       listId,
+      selectedUser,
     ]);
     res.status(200).json(items);
   } catch (err) {
