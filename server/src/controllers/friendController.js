@@ -28,6 +28,15 @@ const friendController = {
         return res.status(400).json({ message: "Invalid friend data" });
       }
 
+      const [[existingFriend]] = await pool.query(
+        "SELECT * FROM friends WHERE user_id = ? AND friend_id = ?",
+        [userId, friend.id]
+      );
+
+      if (existingFriend) {
+        return res.status(400).json({ message: "Friend already added" });
+      }
+
       await pool.query(
         "INSERT INTO friends (user_id, friend_id) VALUES (?, ?)",
         [userId, friend.id]
