@@ -5,6 +5,10 @@ const createdListSchema = Joi.object({
   title: Joi.string().min(1).max(255).required(),
 });
 
+const getListsByUsernameSchema = Joi.object({
+  selectedUser: Joi.string().min(1).max(255).required(),
+});
+
 const listController = {
   createList: async (req, res) => {
     try {
@@ -55,6 +59,11 @@ const listController = {
   },
   getListsByUsername: async (req, res, next) => {
     try {
+      const { error } = getListsByUsernameSchema.validate(req.params);
+      if (error) {
+        return res.status(400).json({ message: error.details[0].message });
+      }
+
       const username = req.params.selectedUser;
       const [user] = await pool.query(
         "SELECT * FROM users WHERE username = ?",
