@@ -11,6 +11,10 @@ const updateItemSchema = Joi.object({
   completed: Joi.boolean().required(),
 });
 
+const idSchema = Joi.object({
+  id: Joi.number().integer().required(),
+});
+
 exports.addItem = async (req, res) => {
   try {
     const { error } = addItemSchema.validate(req.body);
@@ -33,6 +37,10 @@ exports.addItem = async (req, res) => {
 
 exports.deleteItem = async (req, res) => {
   try {
+    const { error } = idSchema.validate(req.params);
+    if (error) {
+      return res.status(400).json({ message: error.details[0].message });
+    }
     const itemId = req.params.id;
     const [result] = await pool.query("DELETE FROM items WHERE id = ?", [
       itemId,
@@ -73,6 +81,10 @@ exports.updateItem = async (req, res) => {
 
 exports.getItemsByListId = async (req, res) => {
   try {
+    const { error } = idSchema.validate(req.params);
+    if (error) {
+      return res.status(400).json({ message: error.details[0].message });
+    }
     const listId = req.params.list_id;
     const [items] = await pool.query("SELECT * FROM items WHERE list_id = ?", [
       listId,
