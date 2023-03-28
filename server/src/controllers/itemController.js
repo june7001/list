@@ -12,7 +12,7 @@ const updateItemSchema = Joi.object({
 });
 
 const idSchema = Joi.object({
-  id: Joi.number().integer().required(),
+  id: Joi.number().integer(),
 });
 
 exports.addItem = async (req, res) => {

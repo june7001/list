@@ -45,7 +45,7 @@ const friendController = {
   getAllFriends: async (req, res, next) => {
     try {
       const schema = joi.object({
-        userId: joi.number().integer().positive().required(),
+        userId: joi.number().integer().positive(),
       });
       const { error } = schema.validate(req.params);
       if (error) {
