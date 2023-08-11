@@ -1,3 +1,4 @@
+#TODO: Redesign
 # Installation
 
 ## 1.Clone the repository:
@@ -13,7 +14,7 @@ npm install
 cd ../client/list  
 npm install
 
-## 3.Set up environment variables: (invalid now after receiving my grade)
+## 3.Set up environment variables: (invalid now after I received my grade)
 
 Create a .env file in the root directory and a .env.local file in the client/list directory, then add the necessary variables.
 
